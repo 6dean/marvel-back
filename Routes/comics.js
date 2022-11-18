@@ -8,7 +8,7 @@ router.get("/comics", async (req, res) => {
   const limit = req.query.limit || 100;
   try {
     const response = await axios.get(
-      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=E5BWawWIebCEK7gT&title=${title}&skip=${skip}&limit=${limit}`
+      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.MARVEL_KEY}&title=${title}&skip=${skip}&limit=${limit}`
     );
     res.json(response.data);
   } catch (error) {
