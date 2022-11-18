@@ -11,7 +11,7 @@ router.get("/characters", async (req, res) => {
     );
     res.json(response.data);
   } catch (error) {
-    res.status(400).json({ error: message });
+    res.status(400).json({ message: error });
   }
 });
 
